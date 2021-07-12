@@ -21,14 +21,16 @@
     <h2 class="title">Product</h2>
     <div class="row">
       <?php
-        foreach($barang as $row) :
+      foreach ($barang as $row) :
       ?>
-      <div class="col-4">
-        <img src="/assets/images/<?= $row['input_gambar'];?>" />
-        <h4><?= $row['nama_product'];?></h4>
-        <p><?= $row['harga'];?></p>
-      </div>
-      <?php endforeach;?>
+        <div class="col-4">
+          <a href="/product/detail/<?= $row['nama_product']; ?>">
+            <img src="/assets/images/<?= $row['input_gambar']; ?>" />
+          </a>
+          <h4><?= $row['nama_product']; ?></h4>
+          <p><?= $row['harga']; ?></p>
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </div>
