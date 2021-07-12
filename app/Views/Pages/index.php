@@ -78,47 +78,16 @@
     <div class="kategori" id="product">
       <h2 class="text-center mt-5 mb-5 font-weight-bold">Product</h2>
       <div class="row text-center">
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a2.jpg" height="150px" width="150px" />
-          <h4>Mic</h4>
-
-          <p>Rp. 10.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a6.jpg" height="150px" width="150px" />
-          <h4>Luxury Gorden</h4>
-          <p>Rp. 350.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a1.jpg" height="150px" width="150px" />
-          <h4>Blazer for wedding</h4>
-          <p>Rp. 50.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a5.jpg" height="150px" width="150px" />
-          <h4>Kamera</h4>
-          <p>Rp. 150.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a2.jpg" height="150px" width="150px" />
-          <h4>Mic</h4>
-          <p>Rp. 10.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a6.jpg" height="150px" width="150px" />
-          <h4>Luxury Gorden</h4>
-          <p>Rp. 350.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a1.jpg" height="150px" width="150px" />
-          <h4>Blazer for wedding</h4>
-          <p>Rp. 50.000</p>
-        </div>
-        <div class="col-md-3">
-          <img class="images-products" src="/assets/images/a5.jpg" height="150px" width="150px" />
-          <h4>Kamera</h4>
-          <p>Rp. 150.000</p>
-        </div>
+        <?php foreach ($product as $p) : ?>
+          <div class="col-md-3">
+            <a href="/product/detail/<?= $p['nama_product']; ?>">
+              <img src="/assets/images/<?= $p['input_gambar']; ?>" height="150" width="150">
+            </a>
+            <h4><?= $p['nama_product']; ?></h4>
+            <p>Rp. <?= $p['harga']; ?></p>
+            <!-- <p>vendor </p> -->
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>

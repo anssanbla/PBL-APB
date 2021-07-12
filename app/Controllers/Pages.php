@@ -14,7 +14,8 @@ class Pages extends BaseController
     }
     public function index()
     {
-        return view('pages/index');
+        $data['product'] = $this->productModel->getAllProduct();
+        echo view('pages/index',$data);
     }
     public function login()
     {

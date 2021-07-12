@@ -14,7 +14,7 @@ class Login extends BaseController
 
 	public function index()
 	{
-		echo view('page/login');
+		echo view('pages/login');
 	}
 
 	public function cek_login()
@@ -24,10 +24,17 @@ class Login extends BaseController
 
 		$cek = $this->M_Login->getUser($username, $password);
 
-		if(($cek['username'] == $username) && ($cek['password'] == $password)){
-			return redirect()->to('/home');
+		if($cek){
+			if (($cek['username'] == $username) && ($cek['password'] == $password)) {
+				return redirect()->to('/home');
+			} else {
+				return redirect()->to('/login');
+			}
 		}else{
-			return redirect()->to('/login');
+			echo "<script>";
+			echo " alert('Username / Password Anda Salah ?!');      
+            window.location.href='" . site_url('/login') . "';
+            </script>";
 		}
 		
 	}

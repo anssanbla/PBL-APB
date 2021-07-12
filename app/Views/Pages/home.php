@@ -20,31 +20,15 @@
   <div class="small-container">
     <h2 class="title">Product</h2>
     <div class="row">
+      <?php
+        foreach($barang as $row) :
+      ?>
       <div class="col-4">
-        <img src="/assets/images/a2.jpg" />
-        <h4>Mic</h4>
-        <p>Rp. 10.000</p>
+        <img src="/assets/images/<?= $row['input_gambar'];?>" />
+        <h4><?= $row['nama_product'];?></h4>
+        <p><?= $row['harga'];?></p>
       </div>
-      <div class="col-4">
-        <img src="/assets/images/a6.jpg" />
-        <h4>Luxury Gorden</h4>
-        <p>Rp. 350.000</p>
-      </div>
-      <div class="col-4">
-        <img src="/assets/images/a1.jpg" />
-        <h4>Blazer for wedding</h4>
-        <p>Rp. 50.000</p>
-      </div>
-      <div class="col-4">
-        <img src="/assets/images/a5.jpg" />
-        <h4>Kamera</h4>
-        <p>Rp. 150.000</p>
-      </div>
-      <div class="col-4">
-        <img src="/assets/images/a2.jpg" />
-        <h4>Mic</h4>
-        <p>Rp. 10.000</p>
-      </div>
+      <?php endforeach;?>
     </div>
   </div>
 </div>

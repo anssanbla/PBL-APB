@@ -22,4 +22,22 @@ class ProductModel extends Model
         // return $builder;
         return $this->table('tbl_product')->like('nama_product', $keyword);
     }
+    public function getAllProduct()
+    {
+        return $this->db->table('tbl_product')
+        ->get()->getResultArray();
+    }
+
+    //for home
+    public function getAllProductHome()
+    {
+        return $this->db->table('tbl_product')
+        ->limit(8)->get()->getResultArray();
+    }
+
+    public function sortByHargaMax()
+    {
+        return $this->db->table('tbl_product')
+        ->orderBy('harga','ASC')->get()->getResultArray();     
+    }
 }

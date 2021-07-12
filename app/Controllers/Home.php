@@ -16,12 +16,12 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Home | APBPA',
-			'barang' => $this->ProductModel->getAllProduct
+			'barang' => $this->ProductModel->getAllProduct()
 		];
 
-		dd($this->ProductModel->getProduct);
-		//echo view('layout/header', $data);
-		//echo view('Pages/home',$data);
-		//echo view('layout/footer',$data);
+		//dd($this->ProductModel->getAllProduct());
+		echo view('layout/header', $data);
+		echo view('Pages/home',$data);
+		echo view('layout/footer',$data);
 	}
 }

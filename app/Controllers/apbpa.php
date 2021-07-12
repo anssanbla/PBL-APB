@@ -15,6 +15,9 @@ class Apbpa extends BaseController
     }
     public function index()
     {
-        return view('pages/index');
+        $data = [
+            'product' => $this->productModel->getAllProductHome(),
+        ];
+        echo view('pages/index',$data);
     }
 }
