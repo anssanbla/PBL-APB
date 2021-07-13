@@ -26,8 +26,12 @@ class Login extends BaseController
 
 		if($cek){
 			if (($cek['username'] == $username) && ($cek['password'] == $password)) {
-				return redirect()->to('/home');
-			} else {
+				if($username == 'admin'){
+					return redirect()->to('/admin');
+				}else{
+					return redirect()->to('/home');
+				}
+			}else{
 				return redirect()->to('/login');
 			}
 		}else{
@@ -36,6 +40,11 @@ class Login extends BaseController
             window.location.href='" . site_url('/login') . "';
             </script>";
 		}
-		
+	}
+
+	public function logout()
+	{
+		//session_destroy();
+		return redirect()->to('/login');
 	}
 }
